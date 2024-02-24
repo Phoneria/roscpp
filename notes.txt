@@ -1,0 +1,40 @@
+MAVSDK: 
+
+cd takeoff_and_land/
+cmake -Bbuild -H.
+cmake --build build -j4
+
+
+-----------------------------------------------
+MAVROS : 
+
+roscore
+
+roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
+
+cd PX4-Autopilot/
+make px4_sitl_default gazebo
+
+
+
+Kodu çalıştırmak için:
+
+catkin_make
+rosrun drone_pkg arming_code 
+
+
+kütüphaneler listesi
+
+rostopic list
+rostopic info <kütüphane_adı>
+
+
+
+
+
+
+
+
+
+
+
